@@ -4,9 +4,9 @@ import java.awt.*;
 
 public class Ball {
 
-    private Point location;
-    private double radius;
-    private Color color;
+    Point location;
+    double radius;
+    Color color;
 
     public Ball(Point location, double radius , Color color){
         this.location = location;
