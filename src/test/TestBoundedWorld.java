@@ -1,7 +1,6 @@
 package test;
 
 import java.awt.Color;
-import java.util.Random;
 
 import org.nhnacademy.canonBallGame.BoundedBall;
 import org.nhnacademy.canonBallGame.BoundedWorld;
@@ -23,14 +22,6 @@ public class TestBoundedWorld {
         ball2.setVelocity(20);
         ball2.setAngle(20);
 
-        // Random random = new Random();
-
-        // for(int i=0; i < 10 ; i++){
-        //     BoundedBall balll = new BoundedBall(new Point(200, 200),50, new Color(random.nextInt()*99999999));
-        //     balll.setAngle(20);
-        //     balll.setVelocity(20);
-        //     world.add(balll);
-        // }
 
         world.add(ball);
         world.add(ball2);

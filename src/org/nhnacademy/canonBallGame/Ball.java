@@ -38,6 +38,10 @@ public class Ball {
         this.color = color;
     }
 
+    public Region getRegion(){
+        return new Region((int)(getX() - getRadius()) , (int) (getY() - getRadius()) , (int)(2*getRadius()) , (int)(2*getRadius())  ) ;
+    }
+
     public void draw(Graphics graphics){
         Color oldColor = graphics.getColor();
 

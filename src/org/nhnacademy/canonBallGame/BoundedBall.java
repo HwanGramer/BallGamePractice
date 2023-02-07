@@ -8,11 +8,12 @@ public class BoundedBall extends MovableBall{
 
     public BoundedBall(Point location , double radius , Color color){
         super(location , radius , color);
-        bounds = new Region(0,0,0,0);
+        bounds = null;
     }
 
     public BoundedBall(Point location , double radius){
         super(location , radius , Color.BLACK);
+        bounds = null;
     }
 
     public void setBounds(Region bounds){
@@ -27,13 +28,15 @@ public class BoundedBall extends MovableBall{
         motion.setDY(-motion.getDY());
     }
 
-    public Region getRegion(){
-        return new Region((int)(getX() - getRadius()) , (int) (getY() - getRadius()) , (int)(2*getRadius()) , (int)(2*getRadius())  ) ;
+
+    public void setMotion(Motion motion){
+        this.motion = motion;
     }
 
     @Override
     public void next(){
         super.next();
+        if(bounds == null) return;
         if(this.bounds.isCollision(getRegion())){
             if((getX() < bounds.getX()) || (bounds.getX() + bounds.getWidth() < getX())){
                 turnX();
