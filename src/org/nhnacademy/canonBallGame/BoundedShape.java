@@ -9,5 +9,6 @@ public class BoundedShape extends Shape{
 
     public BoundedShape(Point location , int width , int height , Color color){
         super(location, width, height, color);
+        bounds = new Region((int)location.getX(), (int)location.getY(), width, height);
     }
 }

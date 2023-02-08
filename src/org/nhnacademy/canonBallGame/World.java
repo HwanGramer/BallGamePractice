@@ -21,8 +21,6 @@ public class World extends Frame{
 
     public void shapeAdd(Shape shape){
         shapes.add(shape);
-        //? 여기까지함 //? 여기까지함 //? 여기까지함 //? 여기까지함 
-        //? 여기까지함 
     }
 
 

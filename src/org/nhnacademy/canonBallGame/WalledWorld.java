@@ -32,13 +32,23 @@ public class WalledWorld extends MovableWorld{
 
                 for(Ball otherBall : balls){
                     if(boundedBall!=otherBall){   //? 나 와 다른공만 해당
+
+                        for(Shape shape : shapes){
+                            BoundedShape boundedShape = (BoundedShape) shape;
+                            if(boundedShape.bounds.isCollision(boundedBall.getRegion())){
+                                boundedBall.turnY();
+                                boundedBall.turnX();
+                            }
+                        }
+
                         if(boundedBall.getRegion().isCollision(otherBall.getRegion())){ //? 볼과 다른볼이 겹친다면
                             boundedBall.turnX();
                         }
                     }
-
-                    //? 숙제 월드에 박스를 추가 Box타입 box Class
+                
                 }
+
+    
 
 
             }

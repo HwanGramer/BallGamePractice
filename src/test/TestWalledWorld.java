@@ -3,6 +3,7 @@ package test;
 import java.awt.Color;
 
 import org.nhnacademy.canonBallGame.BoundedBall;
+import org.nhnacademy.canonBallGame.BoundedShape;
 import org.nhnacademy.canonBallGame.Point;
 import org.nhnacademy.canonBallGame.Shape;
 import org.nhnacademy.canonBallGame.WalledWorld;
@@ -10,7 +11,7 @@ import org.nhnacademy.canonBallGame.WalledWorld;
 public class TestWalledWorld {
 
     public static void main(String[] args) throws InterruptedException{
-        WalledWorld world = new WalledWorld(500,400);
+        WalledWorld world = new WalledWorld(700,600);
 
         world.setInterval(50);
 
@@ -33,11 +34,11 @@ public class TestWalledWorld {
         ball4.setVelocity(50);
         ball4.setAngle(20);
 
-        Shape shape = new Shape(new Point(50,50), 100, 100, Color.DARK_GRAY);
+        BoundedShape shape = new BoundedShape(new Point(200,50), 100, 100, Color.DARK_GRAY);
 
         world.shapeAdd(shape);
 
-        Shape shape2 = new Shape(new Point(300, 300), 100, 100, Color.DARK_GRAY);
+        BoundedShape shape2 = new BoundedShape(new Point(0, 300), 100, 100, Color.DARK_GRAY);
 
         world.shapeAdd(shape2);
 
@@ -47,7 +48,7 @@ public class TestWalledWorld {
         world.add(ball4);
 
         world.setVisible(true);
-        world.run(100);
+        world.run(10000);
 
     }
     
