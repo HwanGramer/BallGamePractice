@@ -2,14 +2,12 @@ package org.nhnacademy.canonBallGame;
 
 import java.awt.*;
 
-public class Ball {
-
-    Point location;
+public class Ball extends Shapes{
     double radius;
     Color color;
 
     public Ball(Point location, double radius , Color color){
-        this.location = location;
+        super(location);
         this.radius = radius;
         this.color = color;
     }
@@ -38,10 +36,12 @@ public class Ball {
         this.color = color;
     }
 
+    @Override
     public Region getRegion(){
         return new Region((int)(getX() - getRadius()) , (int) (getY() - getRadius()) , (int)(2*getRadius()) , (int)(2*getRadius())  ) ;
     }
 
+    @Override
     public void draw(Graphics graphics){
         Color oldColor = graphics.getColor();
 
